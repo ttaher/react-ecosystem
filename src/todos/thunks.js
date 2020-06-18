@@ -22,15 +22,16 @@ export const loadTodos = () => async (dispatch, getState) => {
 
 export const addTodoRequest = text => async dispatch => {
     try {
-        const body = JSON.stringify({ text });
-        const response = await fetch('http://localhost:8080/todos', {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            method: 'post',
-            body,
-        });
-        const todo = await response.json();
+        // const body = JSON.stringify({ text });
+        // const response = await fetch('http://localhost:8080/todos', {
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        //     method: 'post',
+        //     body,
+        // });
+        // const todo = await response.json();
+        const todo = { text: text };
         dispatch(createTodo(todo));
     } catch (e) {
         dispatch(displayAlert(e));
@@ -39,10 +40,12 @@ export const addTodoRequest = text => async dispatch => {
 
 export const removeTodoRequest = id => async dispatch => {
     try {
-        const response = await fetch(`http://localhost:8080/todos/${id}`, {
-            method: 'delete'
-        });
-        const removedTodo = await response.json();
+        // const response = await fetch(`http://localhost:8080/todos/${id}`, {
+        //     method: 'delete'
+        // });
+        // const removedTodo = await response.json();
+        const removedTodo = { id:id};
+
         dispatch(removeTodo(removedTodo));
     } catch (e) {
         dispatch(displayAlert(e));
@@ -51,10 +54,11 @@ export const removeTodoRequest = id => async dispatch => {
 
 export const markTodoAsCompletedRequest = id => async dispatch => {
     try {
-        const response = await fetch(`http://localhost:8080/todos/${id}/completed`, {
-            method: 'post'
-        });
-        const updatedTodo = await response.json();
+        // const response = await fetch(`http://localhost:8080/todos/${id}/completed`, {
+        //     method: 'post'
+        // });
+        // const updatedTodo = await response.json();
+        const updatedTodo = { id: id};
         dispatch(markTodoAsCompleted(updatedTodo));
     } catch (e) {
         dispatch(displayAlert(e));
@@ -62,5 +66,5 @@ export const markTodoAsCompletedRequest = id => async dispatch => {
 }
 
 export const displayAlert = text => () => {
-    alert(text);
+  //  alert(text);
 };
