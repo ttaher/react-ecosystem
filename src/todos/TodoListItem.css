@@ -1,4 +1,4 @@
-.todo-item-container {
+ .todo-item-container {
     background: #fff;
     border-radius: 8px;
     margin-top: 8px;
@@ -6,7 +6,6 @@
     position: relative;
     box-shadow: 0 4px 8px grey;
 }
-
 .buttons-container {
     position: absolute;
     right: 12px;
