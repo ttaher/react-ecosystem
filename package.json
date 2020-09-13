@@ -24,7 +24,7 @@
     "css-loader": "^3.5.3",
     "fetch-mock": "^9.10.1",
     "mocha": "^8.0.1",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hot-loader": "^4.12.21",
